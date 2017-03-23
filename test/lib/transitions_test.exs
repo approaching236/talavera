@@ -98,11 +98,11 @@ defmodule TransitionsTest do
     end
 
     test "transitions are reflexive" do
-      r = :rand.uniform(1000) - 1
-      n = :rand.uniform(Transitions.ring_size(r))
-
-      assert Enum.all?(Transitions.at({r, n}), fn(node) ->
-        Enum.any?(Transitions.at(node), &(&1 == {r, n})) end)
+      for r <- (0..10) do
+        for n <- (0..(Transitions.ring_size(r) - 1)) do
+          assert Enum.all?(Transitions.at({r, n}), &({r, n} in Transitions.at(&1)))
+        end
+      end
     end
   end
 end
