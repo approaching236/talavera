@@ -2,7 +2,7 @@ defmodule Talavera.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", Talavera.RoomChannel
+  channel "room:*", Talavera.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
