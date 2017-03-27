@@ -16,6 +16,7 @@ defmodule Talavera.Router do
   scope "/", Talavera do
     pipe_through :browser # Use the default browser stack
 
+    get "/tile", TileController, :index
     get "/", PageController, :index
   end
 
