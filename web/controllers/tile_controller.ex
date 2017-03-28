@@ -1,11 +1,19 @@
 defmodule Talavera.TileController do
   use Talavera.Web, :controller
 
-  def index(conn, _params) do
-    current = {2, 7}
-    transitions = Transitions.at(current)
+  def index(conn, params) do
+    current = coordinate(params)
 
-    render conn, "index.json", current: current,
-                               transitions: transitions
+    conn
+    |> assign(:current, current)
+    |> assign(:transitions, Transitions.at(current))
+    |> render("index.json")
+  end
+
+  def coordinate(params) do
+    {r, _} = Integer.parse(params["r"])
+    {n, _} = Integer.parse(params["n"])
+
+    {r, n}
   end
 end

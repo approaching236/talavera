@@ -1,17 +1,13 @@
 defmodule Talavera.TileView do
   use Talavera.Web, :view
 
-  def tile(conn)
-    %{
-      current: conn.# get coordinates from connection
-      neighbors: Enum.map(transitions, &tile_json/1)
-    }
+  def render("index.json", %{current: current, transitions: transitions}) do
+    %{current: render_one(current, Talavera.TileView, "tile.json"),
+      neighbors: render_many(transitions, Talavera.TileView, "tile.json")}
   end
 
-  def tile_json({r, n}) do
-    %{
-      bullshit: true,
-      position: [r, n]
-    }
+  def render("tile.json", %{tile: {r, n}}) do
+    %{r: r,
+      n: n}
   end
 end
