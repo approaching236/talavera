@@ -1,0 +1,30 @@
+<h2>Listing coordinates</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Q</th>
+      <th>R</th>
+      <th>S</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for coordinate <- @coordinates do %>
+    <tr>
+      <td><%= coordinate.q %></td>
+      <td><%= coordinate.r %></td>
+      <td><%= coordinate.s %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: coordinate_path(@conn, :show, coordinate), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: coordinate_path(@conn, :edit, coordinate), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: coordinate_path(@conn, :delete, coordinate), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New coordinate", to: coordinate_path(@conn, :new) %>

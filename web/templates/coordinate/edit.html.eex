@@ -1,0 +1,6 @@
+<h2>Edit coordinate</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: coordinate_path(@conn, :update, @coordinate) %>
+
+<%= link "Back", to: coordinate_path(@conn, :index) %>

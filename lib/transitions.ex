@@ -57,4 +57,8 @@ defmodule Transitions do
        {r + 1, n + cardinal({r,n}) + 1}]
     end
   end
+
+  def area_of_circle(r) do
+    Enum.reduce((0..r), 0, &(Transitions.ring_size(&1) + &2))
+  end
 end

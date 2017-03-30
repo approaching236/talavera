@@ -1,0 +1,23 @@
+<h2>Show coordinate</h2>
+
+<ul>
+
+  <li>
+    <strong>Q:</strong>
+    <%= @coordinate.q %>
+  </li>
+
+  <li>
+    <strong>R:</strong>
+    <%= @coordinate.r %>
+  </li>
+
+  <li>
+    <strong>S:</strong>
+    <%= @coordinate.s %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: coordinate_path(@conn, :edit, @coordinate) %>
+<%= link "Back", to: coordinate_path(@conn, :index) %>

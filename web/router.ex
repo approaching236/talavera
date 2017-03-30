@@ -18,6 +18,8 @@ defmodule Talavera.Router do
 
     get "/tile/:r/:n", TileController, :index
     get "/", PageController, :index
+
+    resources "/coordinates", CoordinateController
   end
 
   # Other scopes may use custom stacks.
