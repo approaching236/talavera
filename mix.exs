@@ -4,7 +4,7 @@ defmodule Talavera.Mixfile do
   def project do
     [app: :talavera,
      version: "0.0.1",
-     elixir: "~> 1.2",
+     elixir: "~> 1.3",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
@@ -39,7 +39,7 @@ defmodule Talavera.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:hexgrid, "~> 1.0"}]
+     {:hexgrid, "~> 2.1"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

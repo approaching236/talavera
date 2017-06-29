@@ -8,15 +8,9 @@ defmodule Transitions do
     |> Enum.map(&simplify/1)
   end
 
-  def simplify({r, _n}) when r == 0 do
-    {0, 0}
-  end
-  def simplify({r, n}) when n < 0 do
-    simplify({r, n + ring_size(r)})
-  end
-  def simplify({r, n}) do
-    {r, rem(n, ring_size(r))}
-  end
+  def simplify({r, _n}) when r == 0, do: {0, 0}
+  def simplify({r,  n})  when n < 0, do: simplify({r, n + ring_size(r)})
+  def simplify({r,  n}),             do: {r, rem(n, ring_size(r))}
 
   def ring_size(n) when n == 0 do 1 end
   def ring_size(n) do 6 * n end

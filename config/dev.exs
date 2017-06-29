@@ -37,7 +37,7 @@ config :phoenix, :stacktrace_depth, 20
 config :talavera, Talavera.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "",
   database: "talavera_dev",
   hostname: "localhost",
   pool_size: 10

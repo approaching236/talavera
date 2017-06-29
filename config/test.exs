@@ -13,7 +13,7 @@ config :logger, level: :warn
 config :talavera, Talavera.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "",
   database: "talavera_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
