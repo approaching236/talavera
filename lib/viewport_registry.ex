@@ -35,7 +35,7 @@ defmodule ViewportRegistry do
   end
 
   def handle_call({:lookup, name}, _from, {names, _} = state) do
-    {:reply, Map.fetch(names, name), names, state}
+    {:reply, Map.fetch(names, name), state}
   end
 
   def handle_cast({:create, name}, {names, refs}) do
